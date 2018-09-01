@@ -46,35 +46,6 @@ module.exports=function(app){
 	 file='uploads/syllabus/'+links;
 	  res.download(file); 
 	});
-        	app.post('/home/teacher/attendance',function(req,res){
-
-    var batch =req.body.batch;
-    var attendance=req.body.attendance;
-     var datetime = new Date();
-     var appData = {
-			"error": 1,
-			"data" :""
-            }
-     var userData = {
-			"batch": batch,	
-			"date": datetime,
-			"attendance": attendance
-           }
-
-       console.log(userData);
-		
-		db.con.query('INSERT INTO attendance SET ?', userData, function(err, rows, fields) {
-			if (!err) {
-				appData.error = 0;
-				appData["data"] = "attendance uplaod successfully";
-				res.status(201).json(appData);
-			} else {
-				appData["data"] = err;
-				res.status(400).json(appData);
-			}
-		});
-
-	});
 
 
 }

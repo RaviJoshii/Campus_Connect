@@ -5,6 +5,6 @@ const routers= require('./router/routes');
 const logins=require('./router/login');
 
 logins(app);
-//routers(app);
+routers(app);
 app.listen(port);
 console.log("app is lisneening on port "+port);
