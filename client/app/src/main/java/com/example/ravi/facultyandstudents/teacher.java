@@ -2,10 +2,13 @@ package com.example.ravi.facultyandstudents;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -55,6 +58,7 @@ public class teacher extends AppCompatActivity
 
 
     }
+
 
     @Override
     public void onBackPressed() {
@@ -111,14 +115,19 @@ public class teacher extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_notice){
-            FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.frame,new notice());
-            fragmentTransaction.commit();
+            Intent i =new Intent(this, unotice.class);
+            startActivity(i);
+
 
         } else if (id == R.id.nav_discussionforum) {
-            FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+            String Username= getIntent().getStringExtra("name");
+            //Log.e("usernames",Username);
+            Intent i =new Intent(this, group.class);
+            i.putExtra("username",Username);
+            startActivity(i);
+            /*FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.frame,new discussionforum());
-            fragmentTransaction.commit();
+            fragmentTransaction.commit();*/
 
         }
 
@@ -126,7 +135,11 @@ public class teacher extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.notices);
+        fragment.onActivityResult(requestCode, resultCode, data);
+    }
 
 
 }

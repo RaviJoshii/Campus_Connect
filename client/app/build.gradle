@@ -17,8 +17,8 @@ android {
         }
     }
 }
-repositories{
-    maven{
+repositories {
+    maven {
         url "http://dl.bintray.com/lukaville/maven"
     }
 }
@@ -33,5 +33,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.squareup.okhttp3:okhttp:3.3.1'
     implementation 'com.nbsp:library:1.09'
+    implementation 'com.github.nkzawa:socket.io-client:0.3.0'
 
 }

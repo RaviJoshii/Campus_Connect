@@ -182,11 +182,15 @@ public class LoginActivity extends AppCompatActivity {
                if(y.equals("0")){
                    // Toast.makeText(LoginActivity.this, "Teacher login", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), teacher.class);
+                    intent.putExtra("name",username);
+                    Log.e("username",username);
                     startActivity(intent);
                 }
                else if( y.equals("2")){
                   // Toast.makeText(LoginActivity.this, "Teacher login", Toast.LENGTH_SHORT).show();
                    Intent intent = new Intent(getApplicationContext(), teacher.class);
+                   intent.putExtra("name",username);
+                   Log.e("username",username);
                    startActivity(intent);
                }
 

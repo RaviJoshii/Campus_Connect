@@ -1,26 +1,5 @@
 package com.example.ravi.facultyandstudents;
 
-import android.app.Fragment;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-public class discussionforum extends Fragment {
-    View myview;
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        myview= inflater.inflate(R.layout.discussionforums ,container,false);
-        return myview;
-    }
-}
-
-/*
-
-package com.id.socketio;
-
 import android.annotation.SuppressLint;
 import android.os.Handler;
 import android.os.Message;
@@ -51,7 +30,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity {
+public class group extends AppCompatActivity {
 
     private EditText textField;
     private ImageButton sendButton;
@@ -96,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_group);
 
         Username = getIntent().getStringExtra("username");
 
@@ -222,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
                     if(length == 0){
                         return;
                     }
-                    //Here i'm getting weird error..................///////run :1 and run: 0
+
                     Log.i(TAG, "run: ");
                     Log.i(TAG, "run: " + args.length);
                     String username =args[0].toString();
@@ -352,4 +331,3 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
-*/

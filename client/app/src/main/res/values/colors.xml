@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="color_white">#ffffff</color>
     <color name="color_transparent_white">#cccccc</color>
+    <color name="typing">#FF36C44B</color>
 </resources>

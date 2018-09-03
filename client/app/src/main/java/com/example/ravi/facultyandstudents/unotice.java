@@ -1,28 +1,25 @@
 package com.example.ravi.facultyandstudents;
 
-
 import android.Manifest;
-import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 
+import com.nbsp.materialfilepicker.MaterialFilePicker;
 import com.nbsp.materialfilepicker.ui.FilePickerActivity;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -31,11 +28,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-/**
- * Created by ravi on 4/8/18.
- */
-
-public class uploadsn extends AppCompatActivity {
+public class unotice extends AppCompatActivity {
 
     private Button button;
 
@@ -43,7 +36,7 @@ public class uploadsn extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.uploadsn);
+        setContentView(R.layout.activity_unotice);
 
         button = (Button) findViewById(R.id.ub);
 
@@ -54,7 +47,7 @@ public class uploadsn extends AppCompatActivity {
                 return;
             }
         }
-        Log.e("first","first");
+Log.e("first","first");
         enable_button();
     }
 
@@ -64,7 +57,7 @@ public class uploadsn extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.e("first2","first2");
-                Intent intent = new Intent(uploadsn.this, FilePickerActivity.class);
+                Intent intent = new Intent(unotice.this, FilePickerActivity.class);
                 startActivityForResult(intent, 10);
 
             }
@@ -114,7 +107,7 @@ public class uploadsn extends AppCompatActivity {
                             .build();
                     Log.e("first5","first5");
                     Request request = new Request.Builder()
-                            .url("http://192.168.43.212:7000/home/teacher/snotes")
+                            .url("http://192.168.43.212:7000/home/teacher/unotice")
                             .post(request_body)
                             .build();
 
@@ -149,5 +142,4 @@ public class uploadsn extends AppCompatActivity {
 
         return MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
     }
-
 }
