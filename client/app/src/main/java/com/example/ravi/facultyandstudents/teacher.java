@@ -30,15 +30,8 @@ public class teacher extends AppCompatActivity
         setContentView(R.layout.activity_teacher);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -49,11 +42,11 @@ public class teacher extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        SharedPreferences prefs = getSharedPreferences("Teachers", MODE_PRIVATE);
+       /* SharedPreferences prefs = getSharedPreferences("Teachers", MODE_PRIVATE);
         String restoredText = prefs.getString("text", null);
         if (restoredText != null) {
             String Tname = prefs.getString("name", "No name defined");//"No name defined" is the default value.
-        }
+        }*/
 
 
 
@@ -110,9 +103,8 @@ public class teacher extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_uploadsn) {
-            FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.frame,new uploadsn());
-            fragmentTransaction.commit();
+            Intent i =new Intent(this, uploadsn.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_notice){
             Intent i =new Intent(this, unotice.class);
@@ -121,7 +113,6 @@ public class teacher extends AppCompatActivity
 
         } else if (id == R.id.nav_discussionforum) {
             String Username= getIntent().getStringExtra("name");
-            //Log.e("usernames",Username);
             Intent i =new Intent(this, group.class);
             i.putExtra("username",Username);
             startActivity(i);

@@ -7,6 +7,12 @@
     tools:context="com.example.ravi.facultyandstudents.LoginActivity"
     android:orientation="vertical"
     android:weightSum="20">
+<ImageView
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:layout_margin="20sp"
+        android:background="@drawable/staff"/>
 
 <RadioGroup
     android:layout_width="wrap_content"
@@ -25,12 +31,17 @@
         android:layout_height="wrap_content"
         android:text="STUDENT" />
 
+
 </RadioGroup>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="LOGIN"/>
+
+<LinearLayout
+    android:layout_marginTop="30dp"
+    android:background="@color/sky"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
 
     <EditText
         android:id="@+id/editText"
@@ -50,8 +61,10 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login" />
+</LinearLayout>
 
 </LinearLayout>

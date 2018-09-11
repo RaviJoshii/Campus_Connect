@@ -1,31 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/litesky">
 
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ADD A NEW STUDENT HERE"
-        android:textStyle="bold" />
+        android:text="ADD NEW STUDENT"
+        android:textSize="25dp"
+        android:padding="15dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+
+        android:background="@color/sky" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:background="@color/whatsapp">
+
+
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:hint="Name" />
 
     <EditText
         android:id="@+id/editText4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="RollNO." />
+        android:inputType="text"
+        android:hint="RollNo." />
     <RadioGroup
         android:id="@+id/radiogroup"
         android:layout_width="wrap_content"
@@ -61,8 +76,10 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="ADD" />
+    </LinearLayout>
 
 </LinearLayout>

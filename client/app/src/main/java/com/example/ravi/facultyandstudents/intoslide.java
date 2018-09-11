@@ -1,14 +1,16 @@
 package com.example.ravi.facultyandstudents;
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class intoslide extends AppCompatActivity {
+public class  intoslide extends AppCompatActivity {
     private ViewPager msliderViewPager;
     private LinearLayout mLayout;
     private slideradapter SliderAdapter ;
@@ -20,6 +22,7 @@ public class intoslide extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.introactivity);
+        SliderAdapter = new slideradapter(this);
         msliderViewPager=(ViewPager)findViewById(R.id.pager);
         mLayout=findViewById(R.id.layout);
         back=findViewById(R.id.back);
@@ -33,6 +36,7 @@ public class intoslide extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 msliderViewPager.setCurrentItem(mcurrentPage+1);
+                Log.e("count",mcurrentPage+"");
             }
         });
         back.setOnClickListener(new View.OnClickListener(){
@@ -45,9 +49,10 @@ public class intoslide extends AppCompatActivity {
     }
 
     private void addsDotIndicator(int position) {
-        int No_of_slides=3;
+        int No_of_slides=5;
         mdots=new TextView[No_of_slides];
-        for(int i=0;i<No_of_slides;i++)
+        mLayout.removeAllViews();
+        for(int i=0;i<mdots.length;i++)
         {
             mdots[i]=new TextView(this);
             mdots[i].setText(Html.fromHtml("&#8226;"));
@@ -75,16 +80,30 @@ public class intoslide extends AppCompatActivity {
             if(mcurrentPage==0){
                 back.setEnabled(false );
                 next.setEnabled(true);
+                Log.e("0","0");
                 back.setVisibility(View.INVISIBLE);
                 next.setText("NEXT");
             }
-            else if(mcurrentPage==mdots.length-1){
+            else if(mcurrentPage==4){
                 back.setEnabled(true );
                 next.setEnabled(true);
+                Log.e("4","4");
                 back.setVisibility(View.VISIBLE);
                 next.setText("START");
                 back.setText("BACK");
-                //////////////start the ctualactivity
+
+                next.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view) {
+                        if(mcurrentPage==4) {
+                            Log.e("5", "5");
+                            Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                            startActivity(i);
+                        }
+                    }
+                });
+
+
             }
             else{
                 back.setEnabled(true );

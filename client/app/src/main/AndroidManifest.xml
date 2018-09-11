@@ -11,7 +11,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/appicons"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -30,7 +30,12 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".intoslide" />
         <activity android:name=".group" />
-        <activity android:name=".unotice"></activity>
+        <activity android:name=".unotice" />
+        <activity android:name=".zstudent" />
+        <activity android:name=".znotes" />
+        <activity android:name=".uploadsn" />
+        <activity android:name=".zchangepassword" />
+        <activity android:name=".znotice"></activity>
     </application>
 
 </manifest>

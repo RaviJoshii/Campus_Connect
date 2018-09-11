@@ -23,7 +23,7 @@ module.exports=function(app){
 
     app.post('/home/Studentlogin',function(req,res){
 			var appData = {};
-			var rollno = req.body.rollno;
+			var rollno = req.body.username;
 			var password = req.body.password;
 			
 					db.con.query('SELECT * FROM student WHERE rollno = ?', [rollno], 
@@ -188,6 +188,7 @@ module.exports=function(app){
                     });
 
                 });
+
 
 
 

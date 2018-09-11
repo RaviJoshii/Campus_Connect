@@ -6,4 +6,7 @@
     <color name="color_white">#ffffff</color>
     <color name="color_transparent_white">#cccccc</color>
     <color name="typing">#FF36C44B</color>
+    <color name="sky">#60fff4</color>
+    <color name="whatsapp">#6bff93</color>
+    <color name="litesky">#c0f9ec</color>
 </resources>

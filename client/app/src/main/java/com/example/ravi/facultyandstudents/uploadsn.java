@@ -5,6 +5,7 @@ import android.Manifest;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.nbsp.materialfilepicker.ui.FilePickerActivity;
 
@@ -38,14 +40,16 @@ import okhttp3.Response;
 public class uploadsn extends AppCompatActivity {
 
     private Button button;
-
-
+    EditText editText2;
+    String description2;
+    int count2=0;
+    String key2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.uploadsn);
 
-        button = (Button) findViewById(R.id.ub);
+        button = (Button) findViewById(R.id.ub2);
 
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
@@ -88,6 +92,16 @@ public class uploadsn extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, final Intent data) {
+        editText2=findViewById(R.id.desc2);
+        count2=count2+1;
+        key2=String.valueOf(count2);
+        description2=editText2.getText().toString();
+        Log.e("first4","first4");
+        SharedPreferences sharedpreferences = getSharedPreferences("describe",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString("key", key2);
+        editor.putString("desc", description2);
+        editor.commit();
         Log.e("first4","first4");
         if(requestCode == 10 && resultCode == RESULT_OK){
             Log.e("first4","first4");
@@ -114,7 +128,7 @@ public class uploadsn extends AppCompatActivity {
                             .build();
                     Log.e("first5","first5");
                     Request request = new Request.Builder()
-                            .url("http://192.168.43.212:7000/home/teacher/snotes")
+                            .url("http://192.168.43.212:7000/home/teacher/unotes")
                             .post(request_body)
                             .build();
 

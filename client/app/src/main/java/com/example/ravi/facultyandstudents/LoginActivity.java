@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 import android.os.AsyncTask;
 
 import org.json.JSONException;
@@ -110,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                     postDataParams.put("password", password);
                     Log.e("params", postDataParams.toString());
                     SharedPreferences.Editor editor = getSharedPreferences("Teachers", MODE_PRIVATE).edit();
-                    editor.putString("name", username);
+                    editor.putString("sharedTname", username);
                     editor.apply();
                     HttpURLConnection conn = null;
                     try {
@@ -180,15 +179,20 @@ public class LoginActivity extends AppCompatActivity {
 
 
                if(y.equals("0")){
+                   e1.setText("");
+                   e2.setText("");
                    // Toast.makeText(LoginActivity.this, "Teacher login", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), teacher.class);
+                    Intent intent = new Intent(LoginActivity.this, zstudent.class);
                     intent.putExtra("name",username);
                     Log.e("username",username);
+
                     startActivity(intent);
                 }
                else if( y.equals("2")){
+                   e1.setText("");
+                   e2.setText("");
                   // Toast.makeText(LoginActivity.this, "Teacher login", Toast.LENGTH_SHORT).show();
-                   Intent intent = new Intent(getApplicationContext(), teacher.class);
+                   Intent intent = new Intent(LoginActivity.this, teacher.class);
                    intent.putExtra("name",username);
                    Log.e("username",username);
                    startActivity(intent);
