@@ -1,6 +1,7 @@
 const bodyParser=require('body-parser');
 const multer  = require('multer');
 const db=require('./config');
+var base64Img = require('base64-img');
 
 module.exports=function(app){
 	var count1=0;
@@ -23,7 +24,7 @@ module.exports=function(app){
         filename: function ( req, file, cb ) {
             count2=count2+1;
             var new_file_name=count2.toString()	;
-            cb( null,new_file_name+mime.extension(file.mimetype));
+            cb( null,new_file_name);
         }
     }
 );
@@ -48,16 +49,19 @@ module.exports=function(app){
 	
 
 	app.get('/home/teacher/snotes',function(req,res){
-      var links=req.query.link
-      console.log(links);
-	 file='uploads/notes/'+links;
+	console.log('download notes');
+    var links=req.query.link
+    console.log(links);
+	file='uploads/notes/'+links;
+
 	  res.download(file); 
 	});
 	app.get('/home/teacher/snotice',function(req,res){
+		console.log('download notes');
       var links=req.query.link
       console.log(links);
 	 file='uploads/notice/'+links;
-	  res.download(file); 
+	 	res.download(file);
 	});
 	app.get('/home/teacher/ssyllabus',function(req,res){
       var links=req.query.link
@@ -101,7 +105,8 @@ module.exports=function(app){
 		};
 		var userData = {
 			"key": count1,	
-			"description": req.body.description
+			"description": req.body.description,
+			"content":req.body.content
 
 
 		}
@@ -127,13 +132,14 @@ module.exports=function(app){
 		};
 		var userData = {
 			"key": count2,	
-			"description": req.body.description
+			"description": req.body.description,
+			"content":req.body.content
 
 		}
 
 
 		
-		db.con.query('INSERT INTO filesystem SET ?', userData, function(err, rows, fields) {
+		db.con.query('INSERT INTO filesystem2 SET ?', userData, function(err, rows, fields) {
 			if (!err) {
 				appData.error = 0;
 				appData["data"] = "uploaded";

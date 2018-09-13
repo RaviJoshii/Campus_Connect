@@ -28,6 +28,7 @@
             android:background="@color/sky"
             android:padding="15dp"
             android:text="TIME TABLE"
+            android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="25sp"
             android:textStyle="bold" />

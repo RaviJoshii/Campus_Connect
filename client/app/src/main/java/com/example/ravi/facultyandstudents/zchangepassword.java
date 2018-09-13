@@ -151,7 +151,7 @@ public class zchangepassword extends AppCompatActivity {
                 news.setText("");
                 rollno.setText("");
                 cnew.setText("");
-                Toast.makeText(getApplicationContext(), "ROLLNO or PASSWORD DOESN'T MATCH ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "ROLLNO OR PASSWORD DOESN'T MATCH ", Toast.LENGTH_SHORT).show();
 
             }
 

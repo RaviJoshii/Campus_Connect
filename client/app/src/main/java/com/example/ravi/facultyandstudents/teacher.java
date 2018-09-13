@@ -20,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class teacher extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -59,7 +60,8 @@ public class teacher extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Toast.makeText(getApplicationContext(), "PLease do Logout", Toast.LENGTH_SHORT).show();
+
         }
     }
 
@@ -103,10 +105,15 @@ public class teacher extends AppCompatActivity
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_uploadsn) {
-            Intent i =new Intent(this, uploadsn.class);
-            startActivity(i);
+           /* Intent i =new Intent(this, unotes.class);
+            startActivity(i);*/
+            //Log.e("notes","notes");
+            Intent p =new Intent(this, unotes.class);
+            startActivity(p);
+
 
         } else if (id == R.id.nav_notice){
+
             Intent i =new Intent(this, unotice.class);
             startActivity(i);
 
@@ -121,6 +128,15 @@ public class teacher extends AppCompatActivity
             fragmentTransaction.commit();*/
 
         }
+        else if (id == R.id.nav_wifichat) {
+            Intent i =new Intent(this, wifi.class);
+            startActivity(i);
+
+        }
+        else if(id==R.id.nav_share){
+            Toast.makeText(getApplicationContext(), "logout Succesfully", Toast.LENGTH_SHORT).show();
+            finish();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -131,6 +147,12 @@ public class teacher extends AppCompatActivity
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.notices);
         fragment.onActivityResult(requestCode, resultCode, data);
     }
+    /*@Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "logout Succesfully", Toast.LENGTH_SHORT).show();
+
+    }*/
+
 
 
 }

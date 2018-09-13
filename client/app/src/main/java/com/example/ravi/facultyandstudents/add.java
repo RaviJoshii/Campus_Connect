@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -206,7 +207,7 @@ public class add extends Fragment  {
 
 
             if(y.equals("0")){
-                // Toast.makeText(LoginActivity.this, "Teacher login", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "STUDENT REGISTER SUCCESSFULLY", Toast.LENGTH_SHORT).show();
                 Log.e("STATUS","REGISTER SUCCESSFULLY");
             }
 

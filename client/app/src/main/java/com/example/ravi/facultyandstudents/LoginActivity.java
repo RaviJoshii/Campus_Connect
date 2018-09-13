@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -168,9 +169,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(String s) {
                 String y="";
+                String d="";
                 try {
                     JSONObject json = new JSONObject(s);
                     y=json.getString("error");
+                    d=json.getString("data");
+
                     Log.e("value of y",y);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -181,21 +185,25 @@ public class LoginActivity extends AppCompatActivity {
                if(y.equals("0")){
                    e1.setText("");
                    e2.setText("");
-                   // Toast.makeText(LoginActivity.this, "Teacher login", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(getApplicationContext(), "Welcome Student", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, zstudent.class);
                     intent.putExtra("name",username);
                     Log.e("username",username);
+
 
                     startActivity(intent);
                 }
                else if( y.equals("2")){
                    e1.setText("");
                    e2.setText("");
-                  // Toast.makeText(LoginActivity.this, "Teacher login", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(getApplicationContext(), "Welcome Teacher", Toast.LENGTH_SHORT).show();
                    Intent intent = new Intent(LoginActivity.this, teacher.class);
                    intent.putExtra("name",username);
                    Log.e("username",username);
                    startActivity(intent);
+               }
+               else{
+                   Toast.makeText(getApplicationContext(), d, Toast.LENGTH_SHORT).show();
                }
 
             }
@@ -227,4 +235,8 @@ public class LoginActivity extends AppCompatActivity {
         return result.toString();
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
 }

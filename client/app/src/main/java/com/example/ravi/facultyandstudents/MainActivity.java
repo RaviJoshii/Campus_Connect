@@ -24,9 +24,11 @@ public class MainActivity extends AppCompatActivity {
             //show start activity
 
             startActivity(new Intent(MainActivity.this, intoslide.class));
-            Toast.makeText(MainActivity.this, "First Run", Toast.LENGTH_LONG)
+            Toast.makeText(MainActivity.this, "Welcome in Campus_connect App", Toast.LENGTH_LONG)
                     .show();
         }else {
+            Toast.makeText(MainActivity.this, "Welcome back User", Toast.LENGTH_LONG)
+                    .show();
             Intent i =new Intent(getApplicationContext(),LoginActivity.class);
             startActivity(i);
         }

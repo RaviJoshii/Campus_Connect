@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_add"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_certificate_box"
             android:title="ADD A STUDENT" />
         <item
             android:id="@+id/nav_uploadsn"
@@ -22,20 +22,20 @@
             android:title="ATTENDANCE" />
         <item
             android:id="@+id/nav_discussionforum"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_folder_gray_48dp"
             android:title="DISCUSSION FORUM" />
+        <item
+            android:id="@+id/nav_wifichat"
+            android:icon="@drawable/ic_menu_share"
+            android:title="WIFI CHAT" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title=" ">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="LOGOUT" />
 
         </menu>
     </item>

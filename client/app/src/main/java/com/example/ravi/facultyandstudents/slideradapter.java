@@ -1,6 +1,7 @@
 package com.example.ravi.facultyandstudents;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -26,11 +27,9 @@ public class slideradapter extends PagerAdapter {
     public int[] slide_images={
             R.drawable.notes2,
             R.drawable.notice2,
-            R.drawable.dis,
+            R.drawable.dicsuss,
             R.drawable.attendance2,
             R.drawable.wifi2,
-
-
 
     };
     public String[] heading={ "NOTES SECTION","ANNOUNCEMENT","DISCUSSION FORUM","ATTENDANCE SYSTEM","WIFI CHAT APPLICATION"
@@ -62,6 +61,8 @@ public class slideradapter extends PagerAdapter {
         ImageView slideimg=(ImageView) view.findViewById(R.id.slde_image);
         TextView slideheading=(TextView) view.findViewById(R.id.slide_heading);
         TextView slidedesc=(TextView) view.findViewById(R.id.slide_desc);
+       // slidedesc.setTypeface(null, Typeface.BOLD);
+        slideheading.setTypeface(null, Typeface.BOLD_ITALIC);
        slideimg.setImageResource(slide_images[position]);
        slidedesc.setText(description[position]);
         slideheading.setText(heading[position]);

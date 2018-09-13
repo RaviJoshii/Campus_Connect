@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class zstudent extends AppCompatActivity {
    ImageButton notes,notice,discuss,changepassword,logout,wifi;
@@ -47,13 +48,14 @@ public class zstudent extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        /*wifi.setOnClickListener(new View.OnClickListener() {
+       wifi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.e("gjh","gh");
+                Intent i =new Intent(getApplicationContext(), wifi.class);
+                startActivity(i);
 
             }
-        });*/
+        });
         changepassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,7 +66,6 @@ public class zstudent extends AppCompatActivity {
        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.e("gjh","gh");
                 finish();
 
             }
@@ -73,4 +74,9 @@ public class zstudent extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "Please do Logout", Toast.LENGTH_SHORT).show();
+
+    }
 }

@@ -59,6 +59,8 @@ public class unotice extends AppCompatActivity {
     List<String> list = new ArrayList<String>();;
     int count1=0;
     String key;
+    String content_type ;
+
 
 
     @Override
@@ -139,7 +141,7 @@ Log.e("first","first");
                 public void run() {
 
                     File f  = new File(data.getStringExtra(FilePickerActivity.RESULT_FILE_PATH));
-                    String content_type  = getMimeType(f.getPath());
+                    content_type  = getMimeType(f.getPath());
 
                     String file_path = f.getAbsolutePath();
                     OkHttpClient client = new OkHttpClient();
@@ -207,6 +209,7 @@ public class SendPostRequestchange extends AsyncTask<String, Void, String> {
             JSONObject postDataParams = new JSONObject();
             //postDataParams.put("key",key);
             postDataParams.put("description",description);
+            postDataParams.put("content",content_type);
            // postDataParams.put("newpassword", snews);
             Log.e("params",postDataParams.toString());
 

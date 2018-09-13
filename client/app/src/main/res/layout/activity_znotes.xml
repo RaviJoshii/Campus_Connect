@@ -21,7 +21,7 @@
         android:background="@color/sky"/>
     <ListView
         android:layout_margin="10dp"
-        android:id="@+id/listnotice"
+        android:id="@+id/listnotes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/whatsapp">
