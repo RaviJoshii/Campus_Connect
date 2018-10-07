@@ -129,10 +129,12 @@ module.exports=function(app){
 			if (!err) {
 				appData.error = 0;
 				appData["data"] = "User registered successfully!";
-				res.status(201).json(appData);
-			} else {
-				appData["data"] = err;
-				res.status(400).json(appData);
+				res.json(appData);
+			} 
+			else {
+				appData.error = 1;
+				appData["data"] = "unsuccessfull";
+				res.json(appData);
 			}
 		});
 

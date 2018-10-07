@@ -20,7 +20,7 @@ module.exports=function(app){
 );
 	var storage2 = multer.diskStorage(
     {
-        destination: "uploads/notesSyllabus",
+        destination: "uploads/notes",
         filename: function ( req, file, cb ) {
             count2=count2+1;
             var new_file_name=count2.toString()	;
@@ -90,10 +90,10 @@ module.exports=function(app){
 			if (!err) {
 				appData.error = 0;
 				appData["data"] = "attendance uplaod successfully";
-				res.status(201).json(appData);
+				res.json(appData);
 			} else {
-				appData["data"] = err;
-				res.status(400).json(appData);
+				appData["data"] = "unsuccessfull";
+				res.json(appData);
 			}
 		});
 

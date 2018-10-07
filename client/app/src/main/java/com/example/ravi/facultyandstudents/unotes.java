@@ -163,8 +163,12 @@ public class unotes extends AppCompatActivity {
                         Response response = client.newCall(request).execute();
 
                         if(!response.isSuccessful()){
+                           // Toast.makeText(getApplicationContext(),"unsuccessfull",Toast.LENGTH_SHORT).show();
+
                             throw new IOException("Error : "+response);
                         }
+
+
 
                         progress.dismiss();
                         new SendPostRequestchange().execute();
@@ -262,6 +266,8 @@ public class unotes extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
+            Toast.makeText(getApplicationContext(),"Notes/syllabus Uploaded Successfully",Toast.LENGTH_SHORT).show();
+
             String y="";
             try {
                 JSONObject json = new JSONObject(result);

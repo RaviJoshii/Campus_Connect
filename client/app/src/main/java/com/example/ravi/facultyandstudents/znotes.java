@@ -135,13 +135,14 @@ public class znotes extends AppCompatActivity {
 
 
 
+        
 
     }
     public void check(final int position,final String drsc,String c){
         Log.e(position+"",drsc);
 
         downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-        Uri uri = Uri.parse("http://82f3f025.ngrok.io/notes/"+position);
+        Uri uri = Uri.parse("http://192.168.43.212:7000/home/teacher/snotes"+position);
         DownloadManager.Request request = new DownloadManager.Request(uri);
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
         request.setAllowedOverRoaming(false);

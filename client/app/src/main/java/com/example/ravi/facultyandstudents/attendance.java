@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -189,9 +190,20 @@ public class attendance extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(String result) {
-            Toast.makeText(myview.getContext(), result,
-                    Toast.LENGTH_LONG).show();
+        protected void onPostExecute(String result) {String y="";
+            String d="";
+            try{
+                JSONObject json1 = new JSONObject(result);
+
+                y=json1.getString("error");
+                d=json1.getString("data");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            Log.e("value of y",y+"->"+d);
+            Log.e("servers",result);
+            Toast.makeText(getActivity(), d, Toast.LENGTH_SHORT).show();
         }
     }
     ///////////////////////////////////////////////

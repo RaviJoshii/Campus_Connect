@@ -117,7 +117,8 @@ public class add extends Fragment  {
                 String department = spinner1.getSelectedItem().toString();
                 String year = spinner2.getSelectedItem().toString();
                 String sex,password;
-                password=rollno+"0011";
+                String names=Name.substring(0,3);
+                password=names+"@123";
                 RadioButton m=myview.findViewById(R.id.male);
                 RadioButton f=myview.findViewById(R.id.female);
                 radioSexGroup =  myview.findViewById(R.id.radiogroup);
@@ -196,20 +197,21 @@ public class add extends Fragment  {
         @Override
         protected void onPostExecute(String s) {
             String y="";
-            try {
-                JSONObject json = new JSONObject(s);
-                y=json.getString("error");
-                Log.e("value of y",y);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            String d="";
+            try{
+                JSONObject json1 = new JSONObject(s);
+
+                y=json1.getString("error");
+                d=json1.getString("data");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+            Log.e("value of y",y+"->"+d);
             Log.e("servers",s);
+            Toast.makeText(getActivity(), d, Toast.LENGTH_SHORT).show();
+               // Log.e("STATUS","REGISTER SUCCESSFULLY");
 
-
-            if(y.equals("0")){
-                Toast.makeText(getActivity(), "STUDENT REGISTER SUCCESSFULLY", Toast.LENGTH_SHORT).show();
-                Log.e("STATUS","REGISTER SUCCESSFULLY");
-            }
 
 
         }
