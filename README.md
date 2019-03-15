@@ -1,6 +1,8 @@
 # Campus_Connect
 
 An Android application used to perform and enjoy many tasks of colleges and make interaction with the campus
+
+
 Features:-
 1. Authentication of Student and Teachers 
 2. Teachers can Upload notice , notes , Syllabus etc.
