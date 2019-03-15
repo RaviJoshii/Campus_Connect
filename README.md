@@ -6,7 +6,7 @@ An Android application used to perform and enjoy many tasks of colleges and make
 Features:-
 1. Authentication of Student and Teachers 
 2. Teachers can Upload notice , notes , Syllabus etc.
-3. STudent can notify and download the stuffs , uploaded or inform by teachers
+3. The Student can notify and download the stuffs , uploaded or inform by teachers
 4. Smart attendance system 
 5. Discussion forum of college
 6. Wifi chat (secure chatting )
