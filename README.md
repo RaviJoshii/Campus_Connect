@@ -4,7 +4,8 @@ An Android application used to perform and enjoy many tasks of colleges and make
 
 
 Features:-
-1. Authentication of Student and Teachers 
+1. Authentication of Student and Teachers <img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/login.jpeg" width="300" height="500">
+
 2. Teachers can Upload notice , notes , Syllabus etc.
 3. The Student can notify and download the stuffs , uploaded or inform by teachers
 4. Smart attendance system 
@@ -13,6 +14,6 @@ Features:-
 
 
 It Consist of two files
-1. Client-  it an android app (java based) 
+1. Client-  it an android app (java based)
 2. backend server- RESTful API's using nodejs.
 
