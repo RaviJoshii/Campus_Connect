@@ -2,11 +2,7 @@
 
 An Android application used to perform and enjoy many tasks of colleges and make interaction with the campus
 
-<img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/Intro 1.jpeg" width="110" height="200">
-  <img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/Intro 2.jpeg" width="110" height="200">
-  <img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/Intro 3.jpeg" width="110" height="200">
-  <img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/Intro 4.jpeg" width="110" height="200">
-  <img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/Intro 5.jpeg" width="110" height="200">
+<img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/Intro 1.jpeg" width="110" height="200"><img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/Intro 2.jpeg" width="110" height="200"><img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/Intro 3.jpeg" width="110" height="200"><img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/Intro 4.jpeg" width="110" height="200"><img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/Intro 5.jpeg" width="110" height="200">
  
 
 <h2>Features</h2>:-
