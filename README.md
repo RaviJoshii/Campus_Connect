@@ -14,12 +14,21 @@ An Android application used to perform and enjoy many tasks of colleges and make
 4. Smart attendance system 
 5. Discussion forum of college
 6. Wifi chat (secure chatting)
-<img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/login.jpeg" width="150" height="400">
+<img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/login.jpeg" width="180" height="300">
+<img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/teacherDashBoard.jpeg" width="180" height="300">
+<img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/add new students.jpeg" width="180" height="300">
+<img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/time table.jpeg" width="180" height="300">
+<img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/upload notice.jpeg" width="180" height="300">
+<img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/download notice.jpeg" width="180" height="300">
+<img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/attendance.jpeg" width="180" height="300">
+<img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/wifi.jpeg" width="180" height="300">
+<img src="https://github.com/RaviJoshii/Campus_Connect/blob/master/ScreenShots/change password.jpeg" width="180" height="300">
 
 
 
 
-It Consist of two files
+
+<h2>It Consist of two files</h2>
 1. Client-  it an android app (java based)
 2. backend server- RESTful API's using nodejs.
 
